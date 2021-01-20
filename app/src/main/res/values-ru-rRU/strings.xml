@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Погода в городе</string>
+    <string name="city">Балашиха</string>
+    <string name="today">Сегодня</string>
+    <string name="degrees">градусы</string>
+    <string name="cloudy">Облачно</string>
+    <string name="tomorrow">Завтра</string>
+    <string name="todayDate">TodayDate</string>
+    <string name="tomorrowDate">TomorrowDate</string>
+    <string name="sunny">Солнечно</string>
+    <string name="settings_activity">Настройки</string>
+    <string name="button_select">ВЫБРАТЬ</string>
+    <string name="checkbox_wind_speed">Скорость Ветра</string>
+    <string name="checkbox_atmospheric_pressure">Атмосферное давление</string>
+    <string name="buttonDarkText">Выбрать Темную тему</string>
+    <string name="buttonLightText">Выбрать Светлую тему</string>
+    <string name="textWindSpeedToday">Ветер (м/с):" "</string>
+    <string name="textAirPressureToday">Давление (мм рт. ст.):" "</string>
+    <string name="textAirPressureTodayLand">"Давление\n(мм рт. ст.): "</string>
+    <string-array name="city_array">
+        <item>Нью-Йорк</item>
+        <item>Москва</item>
+        <item>Париж</item>
+        <item>Берлин</item>
+        <item>Гонконг</item>
+        <item>Лондон</item>
+        <item>Рим</item>
+        <item>Токио</item>
+    </string-array>
+</resources>

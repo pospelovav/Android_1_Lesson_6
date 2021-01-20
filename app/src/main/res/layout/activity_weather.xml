@@ -5,27 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
-
+    tools:context=".CoatOfWeatherActivity">
     <ImageButton
-        android:id="@+id/buttonSettings"
+        android:id="@+id/imageButtonInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:contentDescription="@string/todo"
-        android:onClick="onClick"
-        app:srcCompat="@drawable/gear_icon" />
+        app:srcCompat="@drawable/yandex" />
 
     <FrameLayout
-
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <fragment
-            android:id="@+id/cities"
-            android:name="com.geekbrains.androidbasiclevel.pospelov.FragmentCities"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
     </FrameLayout>
-
 
 </LinearLayout>
