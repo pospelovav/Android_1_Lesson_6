@@ -18,6 +18,7 @@
     <string name="textWindSpeedToday">Ветер (м/с):" "</string>
     <string name="textAirPressureToday">Давление (мм рт. ст.):" "</string>
     <string name="textAirPressureTodayLand">"Давление\n(мм рт. ст.): "</string>
+    <string name="textCitySettingsView">Выберите Ваш город</string>
     <string-array name="city_array">
         <item>Нью-Йорк</item>
         <item>Москва</item>
@@ -27,5 +28,10 @@
         <item>Лондон</item>
         <item>Рим</item>
         <item>Токио</item>
+    </string-array>
+    <string-array name="textWeatherView">
+        <item>Облачно</item>
+        <item>Солнечно</item>
+        <item>Солнечно</item>
     </string-array>
 </resources>

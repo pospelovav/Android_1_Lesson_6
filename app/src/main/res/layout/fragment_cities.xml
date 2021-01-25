@@ -5,18 +5,30 @@
     android:background="@android:color/white"
     android:clickable="true"
     android:focusable="true"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageButton
+        android:id="@+id/buttonSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:contentDescription="@string/todo"
+        app:srcCompat="@drawable/gear_icon" />
+
 
     <ListView
         android:id="@+id/cities_list_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="false" />
 
     <TextView
         android:id="@+id/cities_list_empty_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="@string/empty_list" />
+        android:text="@string/empty_list"
+        android:textSize="30sp"/>
 
 </LinearLayout>

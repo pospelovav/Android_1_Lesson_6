@@ -1,9 +1,11 @@
 package com.geekbrains.androidbasiclevel.pospelov;
 
+
 public final class MainPresenter {
     private static MainPresenter instance = null;
     private static final Object syncObj = new Object();
     private String cityName;
+    private int currentPosition = 0;
     private boolean checkWindSpeed;   //для чекера скорость ветра
     private boolean checkAtmosphericPressure;  //для чекера атм.давление
     private int degreesToday;
@@ -28,6 +30,14 @@ public final class MainPresenter {
     }
     public void setDegreesTomorrow(int degreesTomorrow) {
         this.degreesTomorrow = degreesTomorrow;
+    }
+
+    public void setCurrentPosition(int currentPosition) {
+        this.currentPosition = currentPosition;
+    }
+
+    public int getCurrentPosition() {
+        return currentPosition;
     }
 
     public String getCityName() {

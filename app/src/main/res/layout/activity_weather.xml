@@ -6,18 +6,51 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".CoatOfWeatherActivity">
-    <ImageButton
-        android:id="@+id/imageButtonInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:contentDescription="@string/todo"
-        app:srcCompat="@drawable/yandex" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/cityView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/city"
+            android:textAllCaps="true"
+            android:textColor="@color/colorCityView"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:gravity="start"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <ImageButton
+                android:id="@+id/imageButtonInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@drawable/yandex" />
+        </LinearLayout>
+
+    </LinearLayout>
+
 
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
     </FrameLayout>
+
 
 </LinearLayout>

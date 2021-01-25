@@ -1,5 +1,6 @@
 package com.geekbrains.androidbasiclevel.pospelov;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -8,25 +9,33 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import java.util.Objects;
 
-public class FragmentCities extends Fragment{
+public class FragmentCities extends Fragment implements View.OnClickListener {
     private ListView listView;
     private TextView emptyTextView;
-
-    private boolean isExistCoatOfArms;
+    ImageButton buttonSettings;
+    FragmentSettings fragmentSettings;
+    private boolean isExistSecondFragment;   //можно ли расположить рядом второй фрагмент
     private int currentPosition = 0;
+    MainPresenter presenter = MainPresenter.getInstance();
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_cities, container, false);
+        View layout = inflater.inflate(R.layout.fragment_cities, container, false);
+        buttonSettings = layout.findViewById(R.id.buttonSettings);
+        buttonSettings.setOnClickListener(this);
+        return layout;
     }
 
     @Override
@@ -34,17 +43,20 @@ public class FragmentCities extends Fragment{
         super.onViewCreated(view, savedInstanceState);
         initViews(view);
         initList();
+
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        isExistCoatOfArms = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
+        isExistSecondFragment = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
         if (savedInstanceState != null) {
             currentPosition = savedInstanceState.getInt("CurrentCity", 0);
+
         }
-        if (isExistCoatOfArms) {
+
+        if (isExistSecondFragment) {
             listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
             showCoatOfWeather();
         }
@@ -58,6 +70,7 @@ public class FragmentCities extends Fragment{
 
     private void initViews(View view) {
         listView = view.findViewById(R.id.cities_list_view);
+
         emptyTextView = view.findViewById(R.id.cities_list_empty_view);
     }
 
@@ -69,27 +82,38 @@ public class FragmentCities extends Fragment{
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 currentPosition = position;
-                showCoatOfWeather();
+                presenter.setCityName("");
 
+                if (fragmentSettings != null){
+                    Intent intent = new Intent();
+                    intent.setClass(getActivity(), MainActivity.class);
+                    intent.putExtra("index", getCoatContainer());
+                    startActivity(intent);
+                } else {
+                    showCoatOfWeather();
+                }
             }
-
         });
+
     }
 
     private void showCoatOfWeather() {
-        if (isExistCoatOfArms) {
-            listView.setItemChecked(currentPosition, true);
+        //listView.setItemChecked(currentPosition, true);
+        listView.setItemChecked(currentPosition, false);
+        if (isExistSecondFragment) {
             CoatOfWeatherFragment detail = (CoatOfWeatherFragment)  getFragmentManager().findFragmentById(R.id.coat_of_weather);
-
             if (detail == null || detail.getIndex() != currentPosition) {
                 detail = CoatOfWeatherFragment.create(getCoatContainer());
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
+
                 ft.replace(R.id.coat_of_weather, detail);  // замена фрагмента
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 ft.addToBackStack("Some_Key");
                 ft.commit();
             }
+
         } else {
+
             Intent intent = new Intent();
             intent.setClass(getActivity(), CoatOfWeatherActivity.class);
             intent.putExtra("index", getCoatContainer());
@@ -98,11 +122,42 @@ public class FragmentCities extends Fragment{
     }
 
     private CoatContainer getCoatContainer() {
-        String[] cities = getResources().getStringArray(R.array.city_array);
+        String[] cities = this.getResources().getStringArray(R.array.city_array);
         CoatContainer container = new CoatContainer();
         container.position = currentPosition;
         container.cityName = cities[currentPosition];
         return container;
     }
+
+    private void showSettings(){
+        if (isExistSecondFragment) {
+                fragmentSettings = FragmentSettings.create();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.coat_of_weather, fragmentSettings);  // замена фрагмента
+                ft.commit();
+        } else {
+            Intent intent = new Intent();
+            intent.setClass(getActivity(), SettingsActivity.class);
+            startActivity(intent);
+        }
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.buttonSettings:
+                    showSettings();
+                break;
+            case R.id.buttonSelect:
+                    showCoatOfWeather();
+                break;
+            default:
+                break;
+        }
+    }
+
+
+
 
 }

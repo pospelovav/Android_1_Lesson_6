@@ -1,42 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".SettingsActivity">
 
-    <Button
-        android:id="@+id/buttonSelect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_select"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxAtmosphericPressure" />
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
 
-    <CheckBox
-        android:id="@+id/checkBoxWindSpeed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/checkbox_wind_speed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textSettingsActivityView" />
-
-    <TextView
-        android:id="@+id/textSettingsActivityView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/settings_activity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <CheckBox
-        android:id="@+id/checkBoxAtmosphericPressure"
-        android:layout_width="176dp"
-        android:layout_height="56dp"
-        android:text="@string/checkbox_atmospheric_pressure"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxWindSpeed" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

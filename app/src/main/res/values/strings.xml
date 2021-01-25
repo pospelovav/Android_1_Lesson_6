@@ -25,6 +25,7 @@
     <string name="windSpeedTomorrow" translatable="false">5</string>
     <string name="airPressureTomorrow" translatable="false">753</string>
     <string name="empty_list" translatable="false">Cities list</string>
+    <string name="textCitySettingsView">Select Your City</string>
     <string-array name="city_array">
         <item>New York</item>
         <item>Moscow</item>
@@ -35,14 +36,36 @@
         <item>Rome</item>
         <item>Tokyo</item>
     </string-array>
-    <string-array name="weather_array">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
+
+    <string-array name="textDateView">
+        <item>25.01.2021</item>
+        <item>26.01.2021</item>
+        <item>27.01.2021</item>
     </string-array>
+    <string-array name="textTempView">
+        <item>4 °C</item>
+        <item>-1 °C</item>
+        <item>-2 °C</item>
+    </string-array>
+    <string-array name="textWeatherView">
+        <item>Cloudy</item>
+        <item>Sunny</item>
+        <item>Sunny</item>
+    </string-array>
+    <array name="imageWeatherView">
+        <item>@drawable/cloudy</item>
+        <item>@drawable/sunny</item>
+        <item>@drawable/sunny</item>
+    </array>
+    <array name="windSpeedView">
+        <item>1</item>
+        <item>0</item>
+        <item>3</item>
+    </array>
+    <array name="airPressureView">
+        <item>747</item>
+        <item>750</item>
+        <item>730</item>
+    </array>
+
 </resources>
