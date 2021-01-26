@@ -7,13 +7,15 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.button.MaterialButton;
+
 
 public class CoatOfWeatherActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
-        ImageButton btnInfo;
+        MaterialButton btnInfo;
         btnInfo = findViewById(R.id.imageButtonInfo);
         btnInfo.setVisibility(View.GONE);
         TextView textName = findViewById(R.id.cityView);

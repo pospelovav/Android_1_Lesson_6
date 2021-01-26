@@ -19,6 +19,9 @@
     <string name="textAirPressureToday">Давление (мм рт. ст.):" "</string>
     <string name="textAirPressureTodayLand">"Давление\n(мм рт. ст.): "</string>
     <string name="textCitySettingsView">Выберите Ваш город</string>
+    <string name="hintInputCity">Введите Ваш город</string>
+    <string name="snackbarText">Выбран</string>
+    <string name="snackbarButton">Подтвердить</string>
     <string-array name="city_array">
         <item>Нью-Йорк</item>
         <item>Москва</item>

@@ -12,15 +12,18 @@ import android.widget.TextView;
 import android.view.View.OnClickListener;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.button.MaterialButton;
+
 import java.util.Objects;
 
 public class CoatOfWeatherFragment extends Fragment implements OnClickListener {
     View layout;
     TextView textViewCity;
-    ImageButton btnInfo;
-
+    MaterialButton btnInfo;
     MainPresenter presenter = MainPresenter.getInstance();
 
     static CoatOfWeatherFragment create(CoatContainer container) {
@@ -73,15 +76,23 @@ public class CoatOfWeatherFragment extends Fragment implements OnClickListener {
     }
 
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private void initRecyclerView(SocSource sourceData){
         RecyclerView recyclerView = layout.findViewById(R.id.recycler_view);
 
         recyclerView.setHasFixedSize(true);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(layoutManager);
+
 
         SocnetAdapter adapter = new SocnetAdapter(sourceData);
+
+
+        DividerItemDecoration itemDecoration = new DividerItemDecoration(Objects.requireNonNull(getActivity()),  LinearLayoutManager.VERTICAL);
+        itemDecoration.setDrawable(getActivity().getDrawable(R.drawable.separator));
+        recyclerView.addItemDecoration(itemDecoration);
+
+        recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
     }
 

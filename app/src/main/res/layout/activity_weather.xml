@@ -28,13 +28,20 @@
             android:orientation="horizontal"
             android:gravity="end">
 
-            <ImageButton
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/imageButtonInfo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:insetLeft="5dp"
+                android:insetTop="5dp"
+                android:insetRight="5dp"
+                android:insetBottom="5dp"
                 android:layout_gravity="end"
                 android:contentDescription="@string/todo"
-                app:srcCompat="@drawable/yandex" />
+                app:icon="@drawable/info_icon"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"/>
+
         </LinearLayout>
 
     </LinearLayout>

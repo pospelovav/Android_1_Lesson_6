@@ -16,4 +16,7 @@
     <color name="colorTextWeatherTodayView">#9E2600</color>
     <color name="colorTextTodayDateView">#911E02</color>
     <color name="colorTextTomorrowDateView">#911E02</color>
+    <color name="colorPrimary">#123802</color>
+    <color name="cities_list_view">#FFFFFF</color>
+    <color name="cities_list_empty_view">#000000</color>
 </resources>

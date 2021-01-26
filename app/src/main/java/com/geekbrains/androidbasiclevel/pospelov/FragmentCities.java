@@ -18,12 +18,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.google.android.material.button.MaterialButton;
+
 import java.util.Objects;
 
 public class FragmentCities extends Fragment implements View.OnClickListener {
     private ListView listView;
     private TextView emptyTextView;
-    ImageButton buttonSettings;
+    MaterialButton buttonSettings;
     FragmentSettings fragmentSettings;
     private boolean isExistSecondFragment;   //можно ли расположить рядом второй фрагмент
     private int currentPosition = 0;

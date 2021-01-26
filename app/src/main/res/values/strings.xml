@@ -26,6 +26,9 @@
     <string name="airPressureTomorrow" translatable="false">753</string>
     <string name="empty_list" translatable="false">Cities list</string>
     <string name="textCitySettingsView">Select Your City</string>
+    <string name="hintInputCity">Enter Your City</string>
+    <string name="snackbarText">Select</string>
+    <string name="snackbarButton">Confirm</string>
     <string-array name="city_array">
         <item>New York</item>
         <item>Moscow</item>
