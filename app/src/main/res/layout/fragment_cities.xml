@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonSettings"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:insetLeft="5dp"
+                android:insetTop="5dp"
+                android:insetRight="5dp"
+                android:insetBottom="5dp"
+                android:layout_gravity="end"
+                android:contentDescription="@string/todo"
+                app:icon="@drawable/gear_icon"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"/>
+
+
+    <ListView
+        android:id="@+id/cities_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="false"
+        android:background="@color/cities_list_view"/>
+
+    <TextView
+        android:id="@+id/cities_list_empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/empty_list"
+        android:textSize="30sp"
+        android:textColor="@color/cities_list_empty_view"/>
+
+</LinearLayout>

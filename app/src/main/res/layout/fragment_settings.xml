@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginEnd="10dp">
+
+    <TextView
+        android:id="@+id/textSettingsActivityView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/settings_activity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputCityNameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textSettingsActivityView"
+        android:layout_marginTop="10dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cityName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hintInputCity"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/checkBoxAtmosphericPressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/checkbox_atmospheric_pressure"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxWindSpeed"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxWindSpeed" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/button_select"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxAtmosphericPressure" />
+
+    <CheckBox
+        android:id="@+id/checkBoxWindSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/checkbox_wind_speed"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/textInputCityNameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textInputCityNameLayout" />
+
+    <!--    <AutoCompleteTextView-->
+    <!--        android:id="@+id/textChangeCityView"-->
+    <!--        android:layout_width="220dp"-->
+    <!--        android:layout_height="65dp"-->
+    <!--        android:completionThreshold="1"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/textCitySettingsView"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/textCitySettingsView"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/textCitySettingsView"-->
+    <!--        tools:ignore="LabelFor" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
